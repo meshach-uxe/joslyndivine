@@ -19,9 +19,9 @@ export function Nav() {
       <div className="container nav__row">
         <Link href="/" className="nav__brand" aria-label="Joslyn Divine Foundation, home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/logo-teal.svg" alt="Joslyn Divine Foundation" width="160" height="32" />
+          <img src="/brand/logo-orange.svg" alt="Joslyn Divine Foundation" width="160" height="32" />
         </Link>
-        <nav aria-label="Primary">
+        <nav aria-label="Primary" className="nav__center">
           <ul className="nav__links">
             <li><Link href="/programs">Our work</Link></li>
             <li><Link href="/stories">Stories</Link></li>

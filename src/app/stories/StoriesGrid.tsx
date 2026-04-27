@@ -59,9 +59,16 @@ export function StoriesGrid() {
       <div className="story-grid">
         {visible.map((s) => {
           const isExternal = s.href === "#";
+          const variant = (["warm", "cool", "dusk"] as const)[
+            STORIES.indexOf(s) % 3
+          ];
           const cardContent = (
             <>
-              <div className="story-card__img" role="img" aria-label={s.alt} />
+              <div
+                className={`story-card__img story-card__img--${variant}`}
+                role="img"
+                aria-label={s.alt}
+              />
               <div className="story-card__body">
                 <p className="card__eyebrow">{s.cat.charAt(0).toUpperCase() + s.cat.slice(1)}</p>
                 <h3 className="story-card__title">{s.name}</h3>
