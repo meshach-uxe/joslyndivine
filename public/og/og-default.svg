@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Joslyn Divine Foundation — Default Open Graph share image
+  1200 x 630 (Open Graph spec). Export to PNG for production use.
+  Tokens: locked Design System v1 (Slate, Amber, Teal).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Joslyn Divine Foundation — Beyond survival. Built for leadership.">
+
+  <!-- TOKENS -->
+  <defs>
+    <!-- Subtle dark-to-darker vertical wash on the slate background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Soft amber halo behind the headline, very low opacity -->
+    <radialGradient id="halo" cx="0.78" cy="0.30" r="0.55">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.18"/>
+      <stop offset="60%" stop-color="#F59E0B" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Quiet teal wash, lower-left -->
+    <radialGradient id="tealwash" cx="0.10" cy="0.85" r="0.55">
+      <stop offset="0%" stop-color="#0D9488" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0D9488" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- LAYER 1 · Base -->
+  <rect x="0" y="0" width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#halo)"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#tealwash)"/>
+
+  <!-- LAYER 2 · Top brand strip · 4px amber rule + wordmark -->
+  <rect x="64" y="64" width="80" height="4" fill="#F59E0B" rx="2"/>
+  <text x="64" y="106"
+        font-family="Helvetica Now Display, Helvetica Neue, Arial, sans-serif"
+        font-weight="700"
+        font-size="20"
+        letter-spacing="3.2"
+        fill="#0D9488"
+        text-transform="uppercase">JOSLYN DIVINE FOUNDATION</text>
+
+  <!-- LAYER 3 · Headline lockup · two lines, display-xl scale -->
+  <!-- Line 1 -->
+  <text x="64" y="290"
+        font-family="Helvetica Now Display, Helvetica Neue, Arial, sans-serif"
+        font-weight="700"
+        font-size="96"
+        letter-spacing="-1.5"
+        fill="#FFFFFF">Beyond survival.</text>
+
+  <!-- Line 2, in amber to carry the brand accent -->
+  <text x="64" y="396"
+        font-family="Helvetica Now Display, Helvetica Neue, Arial, sans-serif"
+        font-weight="700"
+        font-size="96"
+        letter-spacing="-1.5"
+        fill="#F59E0B">Built for leadership.</text>
+
+  <!-- LAYER 4 · Sub-line · the lede, body-lg scale -->
+  <text x="64" y="468"
+        font-family="Helvetica Now Text, Helvetica Neue, Arial, sans-serif"
+        font-weight="400"
+        font-size="28"
+        letter-spacing="-0.2"
+        fill="#CBD5E1">A Freetown-based charity supporting children in Kroo Bay</text>
+  <text x="64" y="506"
+        font-family="Helvetica Now Text, Helvetica Neue, Arial, sans-serif"
+        font-weight="400"
+        font-size="28"
+        letter-spacing="-0.2"
+        fill="#CBD5E1">and Susan&#x2019;s Bay through education, shelter, and mentorship.</text>
+
+  <!-- LAYER 5 · Bottom legal strip · slate-500 micro -->
+  <line x1="64" y1="558" x2="1136" y2="558" stroke="#334155" stroke-width="1"/>
+  <text x="64" y="592"
+        font-family="Helvetica Now Text, Helvetica Neue, Arial, sans-serif"
+        font-weight="500"
+        font-size="18"
+        fill="#64748B">joslyndivine.com</text>
+  <text x="1136" y="592"
+        font-family="Helvetica Now Text, Helvetica Neue, Arial, sans-serif"
+        font-weight="500"
+        font-size="18"
+        fill="#64748B"
+        text-anchor="end">Vision 2019 &#x00B7; Programs 2022</text>
+
+  <!-- LAYER 6 · Two corner pin marks · echoes the where-we-work map dots -->
+  <!-- These are subtle design accents only, not maps. -->
+  <circle cx="1076" cy="106" r="8" fill="#F59E0B"/>
+  <circle cx="1106" cy="106" r="8" fill="#F59E0B" opacity="0.45"/>
+
+</svg>

@@ -1,0 +1,21 @@
+export const TOKENS = {
+  color: {
+    slate900: "#0F172A",
+    slate700: "#334155",
+    slate500: "#64748B",
+    slate300: "#CBD5E1",
+    slate200: "#E2E8F0",
+    slate100: "#F1F5F9",
+    slate50: "#F8FAFC",
+    amber: "#F59E0B",
+    amberDk: "#B45309",
+    amberSoft: "#FEF3C7",
+    teal: "#0D9488",
+    tealDk: "#0F766E",
+    tealSoft: "#CCFBF1",
+    success: "#15803D",
+    error: "#B91C1C",
+    info: "#0369A1",
+    white: "#FFFFFF",
+  },
+} as const;

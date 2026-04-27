@@ -1,0 +1,37 @@
+# *
+User-agent: *
+Allow: /
+
+# GPTBot
+User-agent: GPTBot
+Disallow: /
+
+# ClaudeBot
+User-agent: ClaudeBot
+Disallow: /
+
+# anthropic-ai
+User-agent: anthropic-ai
+Disallow: /
+
+# CCBot
+User-agent: CCBot
+Disallow: /
+
+# Google-Extended
+User-agent: Google-Extended
+Disallow: /
+
+# PerplexityBot
+User-agent: PerplexityBot
+Disallow: /
+
+# Bytespider
+User-agent: Bytespider
+Disallow: /
+
+# Host
+Host: https://joslyndivine.com
+
+# Sitemaps
+Sitemap: https://joslyndivine.com/sitemap.xml

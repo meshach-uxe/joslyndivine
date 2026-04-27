@@ -1,0 +1,14 @@
+{
+  "name": "Joslyn Divine Foundation",
+  "short_name": "JDF",
+  "description": "Beyond survival. Built for leadership.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FAFC",
+  "theme_color": "#0F172A",
+  "icons": [
+    { "src": "/favicons/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicons/favicon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/favicons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
