@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Skiplink } from "@/components/Skiplink";
 import { Plausible } from "@/components/Plausible";
 import { SITE } from "@/lib/metadata";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: {
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <Plausible />
+        <Analytics />
       </body>
     </html>
   );
