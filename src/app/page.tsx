@@ -15,23 +15,27 @@ export default function HomePage() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="container hero__inner">
           <div>
-            <p className="eyebrow hero__eyebrow">Freetown, Sierra Leone</p>
-            <h1 className="hero__title" id="hero-title">
+            <p className="eyebrow hero__eyebrow reveal" style={{ ["--reveal-delay" as string]: "60ms" }}>
+              Freetown, Sierra Leone
+            </p>
+            <h1 className="hero__title reveal" id="hero-title" style={{ ["--reveal-delay" as string]: "120ms" }}>
               Beyond survival.
               <br />
               Built for leadership.
             </h1>
-            <p className="hero__sub">
+            <p className="hero__sub reveal" style={{ ["--reveal-delay" as string]: "240ms" }}>
               A leadership institute for the children of Kroo Bay and Susan&rsquo;s Bay &mdash; through education,
               shelter, mentorship, and the slow work of keeping a child safe long enough to become themselves.
             </p>
-            <div className="hero__ctas">
+            <div className="hero__ctas reveal" style={{ ["--reveal-delay" as string]: "340ms" }}>
               <Link href="/donate" className="btn btn--primary btn--lg">Become a monthly partner</Link>
               <Link href="/about" className="btn btn--inverse btn--lg">Read our story</Link>
             </div>
-            <p className="hero__caption">Vision 2019. Programs 2022. Sierra Leone NGO + US 501(c)(3).</p>
+            <p className="hero__caption reveal" style={{ ["--reveal-delay" as string]: "440ms" }}>
+              Vision 2019. Programs 2022. Sierra Leone NGO + US 501(c)(3).
+            </p>
           </div>
-          <div className="hero__portrait" aria-hidden="true" />
+          <div className="hero__portrait reveal" aria-hidden="true" style={{ ["--reveal-delay" as string]: "180ms" }} />
         </div>
       </section>
 
