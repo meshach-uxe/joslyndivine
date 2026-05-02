@@ -38,3 +38,7 @@ next-env.d.ts
 # IDE
 .idea
 .vscode
+
+# graphify (local knowledge-graph audit output)
+graphify-out/
+.graphify_*.py
