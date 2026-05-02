@@ -45,7 +45,6 @@
   --font-micro:   "Helvetica Now Micro", "Helvetica Neue", Arial, sans-serif;
   --font-mono:    "JetBrains Mono", "Menlo", "Consolas", monospace;
   --font-logo:    "Avigea", serif;
-  --font-heading: "Avigea", "Helvetica Now Display", "Helvetica Neue", Arial, sans-serif;
 }
 
 @media (prefers-reduced-motion: reduce) {
