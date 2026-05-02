@@ -26,7 +26,7 @@ export default function PartnersPage() {
             <p className="eyebrow">Four kinds of partner</p>
             <h2>What partnership looks like in practice.</h2>
           </div>
-          <div className="story-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+          <div className="story-grid story-grid--2">
             <article className="card">
               <p className="card__eyebrow">Schools</p>
               <h3 className="card__title">Twin a classroom.</h3>
@@ -64,7 +64,7 @@ export default function PartnersPage() {
       </section>
 
       <section className="section section--wash">
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: "var(--space-8)", alignItems: "start" }}>
+        <div className="container pg-split pg-split--14r">
           <div>
             <p className="eyebrow">Start the conversation</p>
             <h2>No application form. Just a real conversation.</h2>

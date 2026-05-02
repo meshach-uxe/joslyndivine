@@ -47,7 +47,7 @@ export default function AboutPage() {
             <h2>Why this exists.</h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: "var(--space-8)" }}>
+          <div className="pg-split pg-split--15">
             <div className="prose">
               <p>JDF began with a question that didn&rsquo;t have a good answer: what happens to a child in Kroo Bay after the visiting NGOs leave?</p>
               <p>The vision was set in 2019, when our founder, Mrs. Ellaline V. Wright-Hook, returned to Freetown from the diaspora and walked the same lanes she had walked as a girl. The houses were still there. The school fees were not. The children were the same age she had been; their lives were not.</p>
@@ -81,7 +81,7 @@ export default function AboutPage() {
             <p>If we ever break one of these, hold us accountable. They are not aspirational &mdash; they are operational. Every programme decision passes through them.</p>
           </div>
 
-          <div className="story-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+          <div className="story-grid story-grid--2">
             {PRINCIPLES.map((p) => (
               <article key={p.num} className="card">
                 <p className="card__eyebrow" style={{ color: "var(--color-amber-dk)" }}>{p.num}</p>
@@ -101,7 +101,7 @@ export default function AboutPage() {
             <p>Every name here is real, every role is real, and every photograph is shared with consent. Photographs are placeholders in this prototype.</p>
           </div>
 
-          <div className="card" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "var(--space-6)", marginBottom: "var(--space-6)" }}>
+          <div className="card founder-card" style={{ marginBottom: "var(--space-6)" }}>
             <div className="hero__portrait" style={{ height: 160, width: 160, borderRadius: "var(--radius-lg)" }} aria-hidden="true" />
             <div>
               <p className="card__eyebrow">Founder</p>
@@ -115,7 +115,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="story-grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+          <div className="story-grid story-grid--4">
             {[
               { role: "Programme director", body: "Runs day-to-day programme delivery in Freetown. Sierra Leonean. Reports to the board." },
               { role: "Operations lead", body: "Procurement, finance, and the unglamorous everyday. The reason term fees arrive on time." },

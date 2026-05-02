@@ -92,7 +92,7 @@ export function DonatePanel() {
       <p className="dp__outcome">{OUTCOMES[amount] ?? ""}</p>
 
       {/* Channels */}
-      <div className="dp__tabs" style={{ gridTemplateColumns: "repeat(4, 1fr)" }} role="tablist" aria-label="Payment channel">
+      <div className="dp__tabs" role="tablist" aria-label="Payment channel">
         {(["card", "bank", "momo", "crypto"] as Channel[]).map((c) => (
           <button
             key={c}

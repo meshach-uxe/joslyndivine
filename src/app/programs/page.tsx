@@ -18,7 +18,7 @@ export default function ProgramsPage() {
       <section className="section section--white">
         <div className="container">
           <div style={{ display: "grid", gap: "var(--space-7)" }}>
-            <article className="card" style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: "var(--space-6)", alignItems: "center" }}>
+            <article className="card prog-row">
               <div className="prog__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
@@ -41,7 +41,7 @@ export default function ProgramsPage() {
               <Link href="/programs/education" className="btn btn--secondary">See education &rarr;</Link>
             </article>
 
-            <article className="card" style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: "var(--space-6)", alignItems: "center" }}>
+            <article className="card prog-row">
               <div className="prog__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -63,7 +63,7 @@ export default function ProgramsPage() {
               <Link href="/programs/shelter" className="btn btn--secondary">See shelter &rarr;</Link>
             </article>
 
-            <article className="card" style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: "var(--space-6)", alignItems: "center" }}>
+            <article className="card prog-row">
               <div className="prog__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="8" r="4" />

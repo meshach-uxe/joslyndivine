@@ -63,7 +63,7 @@ export default function AccountabilityPage() {
             <div style={{ width: "4%", background: "var(--color-slate-300)", color: "var(--color-slate-900)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 600, fontSize: 12 }}>4%</div>
           </div>
 
-          <div className="story-grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+          <div className="story-grid story-grid--4">
             {[
               { pct: "78%", amt: "$145,392 of $186,400", title: "Programmes", body: "School fees, mentor stipends, kinship-care stipends, transport, books, programme staff salaries, all programme delivery in Freetown." },
               { pct: "12%", amt: "$22,368 of $186,400", title: "Operations", body: "Office rent and utilities in Freetown, accounting, legal, audit, payroll, fundraising-platform fees. No paid acquisition. No commissions." },
@@ -98,7 +98,7 @@ export default function AccountabilityPage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: "var(--space-7)", alignItems: "start" }}>
+          <div className="pg-split pg-split--15" style={{ gap: "var(--space-7)" }}>
             <div>
               <div style={{ display: "flex", height: 32, borderRadius: "var(--radius-md)", overflow: "hidden", marginBottom: "var(--space-5)" }} aria-label="Income channel mix">
                 <div style={{ width: "48%", background: "var(--color-amber)" }} title="48% Card / PayPal" />
@@ -116,7 +116,7 @@ export default function AccountabilityPage() {
                   { c: "var(--color-slate-100)", label: "In-kind — books, uniforms, equipment, professional services", pct: "9%", amt: "$17,442" },
                   { c: "var(--color-slate-300)", label: "Crypto — BTC, ETH, USDC; fewer gifts, larger sizes", pct: "5%", amt: "$9,690" },
                 ].map((row) => (
-                  <li key={row.label} style={{ display: "grid", gridTemplateColumns: "16px 1fr auto auto", gap: "var(--space-3)", alignItems: "center", padding: "var(--space-3) 0", borderBottom: "1px solid var(--color-slate-200)" }}>
+                  <li key={row.label} className="income-row">
                     <span aria-hidden="true" style={{ width: 14, height: 14, borderRadius: "var(--radius-full)", background: row.c, border: "1px solid var(--color-slate-300)" }} />
                     <span style={{ fontSize: 14 }}>{row.label}</span>
                     <strong>{row.pct}</strong>
@@ -158,7 +158,7 @@ export default function AccountabilityPage() {
             </p>
           </div>
 
-          <div className="story-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+          <div className="story-grid story-grid--2">
             {PROMISES.map((p) => (
               <article key={p.title} className="card">
                 <h3 className="card__title">{p.title}</h3>
@@ -182,7 +182,7 @@ export default function AccountabilityPage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1.6fr 1fr", gap: "var(--space-7)", alignItems: "start" }}>
+          <div className="pg-split pg-split--16" style={{ gap: "var(--space-7)" }}>
             <div className="prose">
               <p>
                 Child protection is not a paragraph; it is the whole point. Our safeguarding lead has the final word
@@ -232,7 +232,7 @@ export default function AccountabilityPage() {
             </p>
           </div>
 
-          <div className="story-grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
+          <div className="story-grid story-grid--2">
             <article className="card">
               <h3 className="card__title">Legal &amp; tax status</h3>
               <dl style={{ display: "grid", gap: "var(--space-3)", margin: 0 }}>
@@ -274,7 +274,7 @@ export default function AccountabilityPage() {
             </p>
           </div>
 
-          <div className="story-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+          <div className="story-grid">
             {[
               { year: "FY2024", title: "Annual accountability report", meta: "PDF · 24 pages · 1.8 MB" },
               { year: "FY2024", title: "External audit letter", meta: "PDF · 4 pages · 320 KB" },

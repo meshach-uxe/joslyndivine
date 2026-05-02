@@ -15,7 +15,7 @@ export default function AminataPage() {
       </nav>
 
       <section className="page-hero">
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "var(--space-8)", alignItems: "center" }}>
+        <div className="container pg-split pg-split--11 pg-split--center">
           <div>
             <p className="eyebrow page-hero__eyebrow">Education</p>
             <h1>Aminata.</h1>

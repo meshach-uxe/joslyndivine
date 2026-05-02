@@ -55,7 +55,7 @@ export default function VolunteersPage() {
       </section>
 
       <section className="section section--wash">
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: "var(--space-8)", alignItems: "start" }}>
+        <div className="container pg-split pg-split--14r">
           <div>
             <p className="eyebrow">Apply</p>
             <h2>Tell us about you.</h2>

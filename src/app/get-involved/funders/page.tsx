@@ -20,7 +20,7 @@ export default function FundersPage() {
       />
 
       <section className="section section--white">
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: "var(--space-8)" }}>
+        <div className="container pg-split pg-split--15">
           <div>
             <p className="eyebrow">Why monthly</p>
             <h2>A school year is twelve months long. So is your gift.</h2>
@@ -86,7 +86,7 @@ export default function FundersPage() {
             </p>
           </div>
 
-          <div className="story-grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+          <div className="story-grid story-grid--4">
             <article className="card">
               <h3 className="card__title">Card &amp; PayPal</h3>
               <p className="card__body">

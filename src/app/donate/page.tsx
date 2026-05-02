@@ -9,7 +9,7 @@ export default function DonatePage() {
   return (
     <>
       <section className="page-hero">
-        <div className="container" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: "var(--space-8)", alignItems: "start" }}>
+        <div className="container pg-split pg-split--11">
           <div>
             <p className="eyebrow page-hero__eyebrow">Give</p>
             <h1>Every monthly partner keeps a child in school.</h1>
@@ -56,7 +56,7 @@ export default function DonatePage() {
             </p>
           </div>
 
-          <div className="story-grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
+          <div className="story-grid story-grid--4">
             <div className="card">
               <h3 className="card__title">Card / PayPal</h3>
               <p className="card__body">Default for most donors. Receipt arrives in 5 minutes.</p>
@@ -113,7 +113,7 @@ export default function DonatePage() {
             </p>
           </div>
 
-          <div className="story-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)" }}>
+          <div className="story-grid story-grid--2">
             <div className="card">
               <p className="card__eyebrow">Bank transfer</p>
               <h3 className="card__title">Bank transfer</h3>
