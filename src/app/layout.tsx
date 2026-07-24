@@ -6,6 +6,8 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Skiplink } from "@/components/Skiplink";
 import { Plausible } from "@/components/Plausible";
+import { RevealObserver } from "@/components/RevealObserver";
+import { GiveBar } from "@/components/GiveBar";
 import { SITE } from "@/lib/metadata";
 
 export const metadata: Metadata = {
@@ -48,11 +50,19 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* No-JS safety net: scroll-reveal elements must never stay hidden. */}
+        <noscript>
+          <style>{`.reveal-up{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
+      </head>
       <body>
         <Skiplink />
         <Nav />
+        <GiveBar />
         <main id="main">{children}</main>
         <Footer />
+        <RevealObserver />
         <Plausible />
         <Analytics />
         <SpeedInsights />

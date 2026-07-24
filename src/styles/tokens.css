@@ -45,6 +45,9 @@
   --font-micro:   "Helvetica Now Micro", "Helvetica Neue", Arial, sans-serif;
   --font-mono:    "JetBrains Mono", "Menlo", "Consolas", monospace;
   --font-logo:    "Avigea", serif;
+  /* Editorial display serif — scoped to large moments only (Wednesday band,
+     hero ledger, pull-quotes). Never body, nav, or buttons. */
+  --font-serif:   "Avigea", Georgia, "Times New Roman", serif;
 }
 
 @media (prefers-reduced-motion: reduce) {
