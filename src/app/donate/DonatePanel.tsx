@@ -1,20 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import {
+  AMOUNTS,
+  ASSURANCES,
+  DEFAULT_AMOUNT,
+  OUTCOMES,
+  RECOMMENDED_AMOUNT,
+  type Frequency,
+} from "@/lib/impact";
 
-const OUTCOMES: Record<string, string> = {
-  "15": "$15/month = books for one child for a term.",
-  "30": "$30/month = a school term for one child.",
-  "60": "$60/month = uniform, books, and transport for one child.",
-  "120": "$120/month = a child in school + a mentor.",
-};
-
-type Frequency = "monthly" | "onetime";
 type Channel = "card" | "bank" | "momo" | "crypto";
 
 export function DonatePanel() {
   const [freq, setFreq] = useState<Frequency>("monthly");
-  const [amount, setAmount] = useState("30");
+  const [amount, setAmount] = useState(DEFAULT_AMOUNT);
   const [channel, setChannel] = useState<Channel>("card");
   const [custom, setCustom] = useState("");
 
@@ -64,17 +64,20 @@ export function DonatePanel() {
 
       {/* Amounts */}
       <div className="dp__chips" role="radiogroup" aria-label="Amount in USD">
-        {["15", "30", "60", "120"].map((amt) => (
-          <button
-            key={amt}
-            type="button"
-            role="radio"
-            aria-checked={amount === amt}
-            className={`dp__chip ${amount === amt ? "is-on" : ""}`}
-            onClick={() => { setAmount(amt); setCustom(""); }}
-          >
-            ${amt}
-          </button>
+        {AMOUNTS.map((amt) => (
+          <div key={amt} className="dp__chipwrap">
+            {amt === RECOMMENDED_AMOUNT && <span className="dp__badge">Most start here</span>}
+            <button
+              type="button"
+              role="radio"
+              aria-checked={amount === amt}
+              className={`dp__chip ${amount === amt ? "is-on" : ""}`}
+              style={{ width: "100%" }}
+              onClick={() => { setAmount(amt); setCustom(""); }}
+            >
+              ${amt}
+            </button>
+          </div>
         ))}
       </div>
       <div className="field" style={{ marginBottom: "var(--space-4)" }}>
@@ -121,6 +124,13 @@ export function DonatePanel() {
       >
         {cta}
       </button>
+      {freq === "monthly" && (
+        <div className="dp__assurances">
+          {ASSURANCES.map((a) => (
+            <span key={a} className="dp__assurance">&#10003; {a}</span>
+          ))}
+        </div>
+      )}
       <p className="dp__trust">
         100% to programs after fees · We never sell donor data · Cancel anytime, no questions.
       </p>

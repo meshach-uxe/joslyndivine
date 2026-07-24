@@ -141,6 +141,20 @@ export default function AminataPage() {
             </blockquote>
           </div>
 
+          <div className="give-card">
+            <h3>Keep one Wednesday from being missed.</h3>
+            <p>
+              A monthly partnership pays the small line of things &mdash; shoes, books, bus fare &mdash; that keep a
+              child in school every Wednesday of the term.
+            </p>
+            <div className="give-card__row">
+              <Link href="/donate?freq=monthly&amt=30" className="btn btn--primary btn--lg">
+                Become a monthly partner &mdash; $30/mo
+              </Link>
+              <span className="give-card__note">&#10003; Cancel anytime, no questions.</span>
+            </div>
+          </div>
+
           <p className="micro" style={{ borderTop: "1px solid var(--color-slate-200)", paddingTop: "var(--space-5)", marginTop: "var(--space-7)" }}>
             Story published with full consent of Aminata&rsquo;s guardian, Ya Hawa, and Aminata herself, signed under the
             JDF Guardian Consent Form on 14 February 2026. Photographs taken with the same consent. Aminata&rsquo;s real
