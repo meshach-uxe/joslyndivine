@@ -33,11 +33,10 @@ export function DonatePanelPreview() {
         <Link href="/accountability">As of {MOMENTUM.asOf}</Link>
       </p>
 
-      <div className="dp__tabs" role="tablist" aria-label="Donation frequency">
+      <div className="dp__tabs" role="group" aria-label="Donation frequency">
         <button
           className={`dp__tab ${freq === "monthly" ? "is-on" : ""}`}
-          role="tab"
-          aria-selected={freq === "monthly"}
+          aria-pressed={freq === "monthly"}
           onClick={() => setFreq("monthly")}
           type="button"
         >
@@ -45,8 +44,7 @@ export function DonatePanelPreview() {
         </button>
         <button
           className={`dp__tab ${freq === "onetime" ? "is-on" : ""}`}
-          role="tab"
-          aria-selected={freq === "onetime"}
+          aria-pressed={freq === "onetime"}
           onClick={() => setFreq("onetime")}
           type="button"
         >
@@ -54,7 +52,7 @@ export function DonatePanelPreview() {
         </button>
       </div>
 
-      <div className="dp__chips" role="radiogroup" aria-label="Amount in USD">
+      <div className="dp__chips" role="group" aria-label="Amount in USD">
         {AMOUNTS.map((amt) => (
           <div key={amt} className="dp__chipwrap">
             {amt === RECOMMENDED_AMOUNT && <span className="dp__badge">Most start here</span>}
@@ -71,7 +69,7 @@ export function DonatePanelPreview() {
         ))}
       </div>
 
-      <p className="dp__outcome" key={amount}>{OUTCOMES[amount]}</p>
+      <p className="dp__outcome" aria-live="polite">{OUTCOMES[amount]}</p>
 
       <Link href={`/donate?freq=${freq}&amt=${amount}`} className="btn btn--primary btn--lg dp__cta">
         {cta}

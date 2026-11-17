@@ -1,21 +1,18 @@
-import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { ROUTES } from "@/lib/routes";
-import { PageHero } from "@/components/PageHero";
+import { PageBreadcrumb, PageHero } from "@/components/PageHero";
 import { VolunteerForm } from "@/components/VolunteerForm";
 
 export const metadata = buildMetadata(ROUTES.volunteers);
 
 export default function VolunteersPage() {
   return (
-    <>
-      <nav aria-label="Breadcrumb" className="container" style={{ padding: "var(--space-5)", fontSize: 14, color: "var(--color-slate-500)" }}>
-        <Link href="/get-involved">Get involved</Link> &middot;{" "}
-        <span aria-current="page" style={{ color: "var(--color-slate-900)" }}>Volunteers</span>
-      </nav>
+    <div className="interior interior--volunteers">
+      <PageBreadcrumb links={[{ href: "/get-involved", label: "Get involved" }]} current="Volunteers" />
 
       <PageHero
         eyebrow="Volunteers"
+        tone="cream"
         title="Build alongside our team."
         lede="In Freetown or remotely. Bring time, skill, or both. We respond to every application within seven days, and we never waste a volunteer&rsquo;s time."
       />
@@ -74,6 +71,6 @@ export default function VolunteersPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

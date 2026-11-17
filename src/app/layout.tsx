@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "@/styles/globals.css";
+import "@/styles/site-shell.css";
+import "@/styles/home.css";
+import "@/styles/interior.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Skiplink } from "@/components/Skiplink";
@@ -40,8 +43,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F8FAFC" },
-    { media: "(prefers-color-scheme: dark)", color: "#0F172A" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f6ed" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b3d35" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -60,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Skiplink />
         <Nav />
         <GiveBar />
-        <main id="main">{children}</main>
+        <main id="main" tabIndex={-1}>{children}</main>
         <Footer />
         <RevealObserver />
         <Plausible />

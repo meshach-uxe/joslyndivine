@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
 import { ROUTES } from "@/lib/routes";
 import { ProgramDetail } from "@/components/ProgramDetail";
@@ -66,10 +67,12 @@ export default function EducationPage() {
               <div className="section__head">
                 <p className="eyebrow">From this program</p>
                 <h2>Meet Aminata.</h2>
-                <p>Real name, with consent. Real photograph, taken with consent. Two grades ahead by the end of her second year in the program.</p>
+                <p>Real name, with consent. Two grades ahead by the end of her second year in the program. The library image is illustrative.</p>
               </div>
               <article className="story">
-                <div className="story__image" role="img" aria-label="Aminata, age 12, reading at the JDF community library in Kroo Bay." />
+                <div className="story__image">
+                  <Image src="/images/library-table.webp" alt="Illustration of books on a sunlit library table" fill unoptimized />
+                </div>
                 <div className="story__copy">
                   <h3 className="story__name">Aminata</h3>
                   <p className="story__meta">Class 6 · 6 minute read · April 2026</p>

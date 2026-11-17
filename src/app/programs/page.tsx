@@ -8,7 +8,7 @@ export const metadata = buildMetadata(ROUTES.programs);
 
 export default function ProgramsPage() {
   return (
-    <>
+    <div className="interior interior--programs">
       <PageHero
         eyebrow="What we do"
         title="What we run, where we run it, and why."
@@ -17,7 +17,7 @@ export default function ProgramsPage() {
 
       <section className="section section--white">
         <div className="container">
-          <div style={{ display: "grid", gap: "var(--space-7)" }}>
+          <div className="program-list">
             <article className="card prog-row">
               <div className="prog__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -26,7 +26,7 @@ export default function ProgramsPage() {
                 </svg>
               </div>
               <div>
-                <h3 className="card__title">Educate</h3>
+                <h2 className="card__title">Educate</h2>
                 <p className="card__body">
                   School fees, books, uniforms, transport, and a community library. We follow each child
                   term-by-term, not year-by-year &mdash; and we keep going long after a child stops being a
@@ -49,7 +49,7 @@ export default function ProgramsPage() {
                 </svg>
               </div>
               <div>
-                <h3 className="card__title">Shelter</h3>
+                <h2 className="card__title">Shelter</h2>
                 <p className="card__body">
                   Safe housing for children at risk, with families wherever possible. We build family stability,
                   not orphanages &mdash; kinship care first, group housing only when no kinship option is safe.
@@ -71,7 +71,7 @@ export default function ProgramsPage() {
                 </svg>
               </div>
               <div>
-                <h3 className="card__title">Mentor</h3>
+                <h2 className="card__title">Mentor</h2>
                 <p className="card__body">
                   A trusted adult, every week, for years. Mentors are local, trained, and stay with a child long
                   enough to matter. The cadence is what works; the relationship is what works.
@@ -97,6 +97,6 @@ export default function ProgramsPage() {
           <ThreeRolesStrip />
         </div>
       </section>
-    </>
+    </div>
   );
 }

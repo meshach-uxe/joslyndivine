@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
 import { ROUTES } from "@/lib/routes";
 import { ThreeRolesStrip } from "@/components/ThreeRolesStrip";
@@ -11,74 +12,71 @@ export const metadata = buildMetadata(ROUTES.home);
 
 export default function HomePage() {
   return (
-    <>
+    <div className="home">
       {/* HERO */}
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="container hero__inner">
-          <div>
-            <p className="eyebrow hero__eyebrow reveal" style={{ ["--reveal-delay" as string]: "60ms" }}>
+      <section className="home-hero" aria-labelledby="hero-title">
+        <div className="container home-hero__grid">
+          <div className="home-hero__copy">
+            <p className="eyebrow home-hero__place">
               Freetown, Sierra Leone
             </p>
-            <h1 className="hero__title reveal" id="hero-title" style={{ ["--reveal-delay" as string]: "120ms" }}>
-              Beyond survival.
-              <br />
-              Built for leadership.
+            <h1 id="hero-title">
+              Beyond survival. <span>Built for leadership.</span>
             </h1>
-            <p className="hero__sub reveal" style={{ ["--reveal-delay" as string]: "240ms" }}>
+            <p className="home-hero__lede">
               A leadership institute for the children of Kroo Bay and Susan&rsquo;s Bay &mdash; through education,
               shelter, mentorship, and the slow work of keeping a child safe long enough to become themselves.
             </p>
-            <div className="hero__ctas reveal" style={{ ["--reveal-delay" as string]: "340ms" }}>
-              <Link href="/donate" className="btn btn--primary btn--lg">Become a monthly partner</Link>
-              <Link href="/about" className="btn btn--inverse btn--lg">Read our story</Link>
+            <div className="home-hero__actions">
+              <Link href="/donate" className="btn btn--secondary">
+                Become a monthly partner <span className="cta-arrow" aria-hidden="true">&rarr;</span>
+              </Link>
+              <Link href="/about" className="btn btn--tertiary">Read our story</Link>
             </div>
-            <p className="hero__caption reveal" style={{ ["--reveal-delay" as string]: "440ms" }}>
-              Vision 2019. Programs 2022. Sierra Leone NGO + US 501(c)(3).
+            <p className="home-hero__caption">
+              Vision 2019. Programs 2022. Sierra Leone NGO + <span>US 501(c)(3).</span>
             </p>
           </div>
-
-          {/* An honest "One Wednesday" ledger, not a fabricated photo */}
-          <div className="hero__ledger reveal" aria-label="What one Wednesday costs to keep a child in school" style={{ ["--reveal-delay" as string]: "220ms" }}>
-            <p className="hero__ledger-title">One Wednesday</p>
-            <p className="hero__ledger-sub">The small things that keep a child in school.</p>
-            <ul className="hero__ledger-rows">
-              <li><span>Bus fare to school</span><span className="dots" aria-hidden="true" /><span className="hero__ledger-amt">$0.40</span></li>
-              <li><span>Exercise books</span><span className="dots" aria-hidden="true" /><span className="hero__ledger-amt">$1.25</span></li>
-              <li><span>A hot lunch</span><span className="dots" aria-hidden="true" /><span className="hero__ledger-amt">$0.60</span></li>
-              <li><span>Shoes that fit</span><span className="dots" aria-hidden="true" /><span className="hero__ledger-amt">$8.00</span></li>
-            </ul>
-            <hr className="hero__ledger-rule" />
-            <div className="hero__ledger-total">
-              <span className="label">A month of Wednesdays</span>
-              <span className="dots" aria-hidden="true" />
-              <span className="amt">$30/mo</span>
+          <div className="home-hero__visual">
+            <figure className="home-hero__figure">
+              <Image
+                src="/images/school-desk.webp"
+                alt="Exercise books and a pencil on a sunlit wooden desk"
+                fill
+                priority
+                unoptimized
+              />
+              <figcaption>Illustrative image</figcaption>
+            </figure>
+            <div className="home-hero__links">
+              <Link href="/programs" className="home-hero__link">
+                <span><strong>Our work</strong><span>Education, shelter and mentorship</span></span>
+                <span className="action-arrow" aria-hidden="true">&rarr;</span>
+              </Link>
+              <Link href="/get-involved" className="home-hero__link">
+                <span><strong>Get involved</strong><span>Funders, volunteers and partners</span></span>
+                <span className="action-arrow" aria-hidden="true">&rarr;</span>
+              </Link>
             </div>
-            <p className="hero__ledger-foot">
-              Illustrative amounts. A $30 monthly partnership covers the continuity &mdash; not any single line.
-            </p>
           </div>
         </div>
       </section>
 
       {/* FEATURED STORY */}
-      <section className="section section--white" aria-labelledby="story-title">
+      <section className="section home-story" aria-labelledby="story-title">
         <div className="container">
-          <div className="section__head reveal-up">
-            <p className="eyebrow">One child</p>
-            <h2 id="story-title">It started with a library card.</h2>
-            <p>
-              Real names, told with signed guardian consent. We publish a child&rsquo;s photograph only with
-              permission &mdash; and never to sell despair.
-            </p>
-          </div>
-          <article className="story reveal-up" style={{ ["--reveal-delay" as string]: "120ms" }}>
-            <div
-              className="story__image"
-              role="img"
-              aria-label="An illustrative panel in JDF's amber and teal. No child's photograph is shown without consent."
-            />
+          <article className="story">
+            <div className="story__media">
+              <Image
+                src="/images/library-card.webp"
+                alt="Abstract folded-paper illustration of a book and library card in amber and teal"
+                fill
+                unoptimized
+              />
+            </div>
             <div className="story__copy">
-              <p className="eyebrow">Education</p>
+              <p className="eyebrow">One child <span aria-hidden="true">/</span> Education</p>
+              <h2 id="story-title">It started with a library card.</h2>
               <h3 className="story__name">Aminata</h3>
               <p className="story__meta">Class 6 · 6 minute read · April 2026</p>
               <p className="story__quote">
@@ -94,33 +92,52 @@ export default function HomePage() {
               </Link>
             </div>
           </article>
-          <p className="honest-caption">
-            The panel above is an abstraction, not a stock photo. A child&rsquo;s real photograph appears on this site
-            only with signed guardian consent &mdash; see our{" "}
-            <Link href="/accountability#safeguarding">safeguarding &amp; consent policy</Link>.
-          </p>
+          <div className="home-story__consent">
+            <p>
+              Real names, told with signed guardian consent. We publish a child&rsquo;s photograph only with
+              permission &mdash; and never to sell despair.
+            </p>
+            <p>
+              The panel above is an abstraction, not a stock photo. A child&rsquo;s real photograph appears on this site
+              only with signed guardian consent &mdash; see our{" "}
+              <Link href="/accountability#safeguarding">safeguarding &amp; consent policy</Link>.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* THE WEDNESDAY BAND — the emotional spine, in Avigea */}
+      {/* The Wednesday quote and giving breakdown */}
       <section className="section section--dark wednesday" aria-labelledby="wednesday-title">
-        <div className="container wednesday__inner reveal-up">
-          <p className="eyebrow" style={{ color: "var(--color-amber)" }}>What a monthly gift actually buys</p>
-          <span className="amber-rule" />
-          <blockquote className="wednesday__quote" id="wednesday-title">
-            &ldquo;Tell them they are not paying for one thing. They are paying for a whole long line of small things.
-            The shoes, the books, the bus fare. Each one is small. But if you forget one, the child is not in school on
-            Wednesday. So tell them: they are paying for <span className="hl">Wednesday</span>.&rdquo;
-          </blockquote>
-          <p className="wednesday__cite micro">
-            <span>Ya Hawa, Aminata&rsquo;s grandmother · Kroo Bay, Freetown</span>
-            <Link href="/stories/aminata">Read Aminata&rsquo;s story <span className="cta-arrow" aria-hidden="true">&rarr;</span></Link>
-          </p>
+        <div className="container wednesday__inner">
+          <div className="wednesday__copy">
+            <h2 className="eyebrow" id="wednesday-title">What a monthly gift actually buys</h2>
+            <blockquote className="wednesday__quote">
+              &ldquo;Tell them they are not paying for one thing. They are paying for a whole long line of small things.
+              The shoes, the books, the bus fare. Each one is small. But if you forget one, the child is not in school on
+              Wednesday. So tell them: they are paying for <span className="hl">Wednesday</span>.&rdquo;
+            </blockquote>
+            <p className="wednesday__cite">
+              <span>Ya Hawa, Aminata&rsquo;s grandmother · Kroo Bay, Freetown</span>
+              <Link href="/stories/aminata">Read Aminata&rsquo;s story <span className="cta-arrow" aria-hidden="true">&rarr;</span></Link>
+            </p>
+          </div>
+          <section className="wednesday-ledger" aria-labelledby="wednesday-ledger-title">
+            <h3 id="wednesday-ledger-title">One Wednesday</h3>
+            <p>The small things that keep a child in school.</p>
+            <dl className="wednesday-ledger__rows">
+              <div><dt>Bus fare to school</dt><dd>$0.40</dd></div>
+              <div><dt>Exercise books</dt><dd>$1.25</dd></div>
+              <div><dt>A hot lunch</dt><dd>$0.60</dd></div>
+              <div><dt>Shoes that fit</dt><dd>$8.00</dd></div>
+              <div className="wednesday-ledger__total"><dt>A month of Wednesdays</dt><dd>$30/mo</dd></div>
+            </dl>
+            <p>Illustrative amounts. A $30 monthly partnership covers the continuity &mdash; not any single line.</p>
+          </section>
         </div>
       </section>
 
       {/* PROGRAMS */}
-      <section className="section section--wash" aria-labelledby="programs-title">
+      <section className="section home-programs" aria-labelledby="programs-title">
         <div className="container">
           <div className="section__head reveal-up">
             <p className="eyebrow">What we do</p>
@@ -178,12 +195,15 @@ export default function HomePage() {
       </section>
 
       {/* ACCOUNTABILITY (DARK) */}
-      <section className="section section--dark" aria-labelledby="acct-title">
-        <div className="container">
+      <section className="section home-impact" aria-labelledby="acct-title">
+        <div className="container home-impact__grid">
           <div className="section__head reveal-up">
-            <p className="eyebrow" style={{ color: "var(--color-amber)" }}>Where the money goes</p>
+            <p className="eyebrow">Where the money goes</p>
             <h2 id="acct-title">Radical accountability, on a single page.</h2>
             <p>We publish the numbers, the channels, and the things we will not do. No fine print, no PDFs hidden three clicks deep.</p>
+            <Link href="/accountability" className="btn btn--secondary">
+              Read the accountability page <span className="cta-arrow" aria-hidden="true">&rarr;</span>
+            </Link>
           </div>
           <div className="acct__row reveal-up" style={{ ["--reveal-delay" as string]: "120ms" }}>
             <div className="stat">
@@ -197,17 +217,12 @@ export default function HomePage() {
               <div className="stat__source">Source: JDF Program Records, 2024.</div>
             </div>
           </div>
-          <div className="acct__cta">
-            <Link href="/accountability" className="btn btn--inverse btn--lg">
-              Read the accountability page <span className="cta-arrow" aria-hidden="true">&rarr;</span>
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* DONATE PANEL PREVIEW */}
-      <section className="section section--wash" aria-labelledby="give-title">
-        <div className="container">
+      <section className="section home-give" aria-labelledby="give-title">
+        <div className="container home-give__grid">
           <div className="section__head reveal-up">
             <p className="eyebrow">Give</p>
             <h2 id="give-title">Start your monthly partnership.</h2>
@@ -220,7 +235,7 @@ export default function HomePage() {
       </section>
 
       {/* THREE ROLES — soft landing for the not-yet-ready */}
-      <section className="section section--white" aria-labelledby="three-title">
+      <section className="section home-roles" aria-labelledby="three-title">
         <div className="container">
           <div className="section__head reveal-up">
             <p className="eyebrow">Not ready to give?</p>
@@ -274,6 +289,6 @@ export default function HomePage() {
           ],
         }}
       />
-    </>
+    </div>
   );
 }

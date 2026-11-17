@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { ROUTES } from "@/lib/routes";
+import { PageHero } from "@/components/PageHero";
 
 export const metadata = buildMetadata(ROUTES.accountability);
 
@@ -17,20 +18,14 @@ const PROMISES = [
 
 export default function AccountabilityPage() {
   return (
-    <>
-      <section className="page-hero">
-        <div className="container">
-          <p className="eyebrow page-hero__eyebrow">Accountability</p>
-          <h1>Where the money came from. Where it went. Who runs us.</h1>
-          <p className="page-hero__lede">
-            One page, refreshed every Q1. Every figure cited. Every promise scheduled. If we ever break one of these,
-            hold us to it.
-          </p>
-          <p className="micro" style={{ marginTop: "var(--space-4)" }}>
-            Last refreshed: 12 February 2026 · FY24 figures
-          </p>
-        </div>
-      </section>
+    <div className="interior interior--accountability">
+      <PageHero
+        eyebrow="Accountability"
+        title="Where the money came from. Where it went. Who runs us."
+        lede="One page, refreshed every Q1. Every figure cited. Every promise scheduled. If we ever break one of these, hold us to it."
+      >
+        <p className="micro page-hero__note">Last refreshed: 12 February 2026 · FY24 figures</p>
+      </PageHero>
 
       <nav className="anchors" aria-label="Accountability sections">
         <div className="container anchors__row">
@@ -56,11 +51,11 @@ export default function AccountabilityPage() {
             </p>
           </div>
 
-          <div style={{ display: "flex", height: 48, borderRadius: "var(--radius-md)", overflow: "hidden", marginBottom: "var(--space-7)" }} aria-label="Expenditure breakdown">
-            <div style={{ width: "78%", background: "var(--color-amber)", color: "var(--color-slate-900)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 600, fontSize: 14 }}>78% Programmes</div>
-            <div style={{ width: "12%", background: "var(--color-teal)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 600, fontSize: 14 }}>12% Ops</div>
-            <div style={{ width: "6%", background: "var(--color-teal-soft)", color: "var(--color-teal-dk)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 600, fontSize: 12 }}>6%</div>
-            <div style={{ width: "4%", background: "var(--color-slate-300)", color: "var(--color-slate-900)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 600, fontSize: 12 }}>4%</div>
+          <div className="spend-chart" role="img" aria-label="Expenditure breakdown: 78% programmes, 12% operations, 6% partner organisations, 4% reserves">
+            <div><span>78% Programmes</span></div>
+            <div><span>12% Ops</span></div>
+            <div><span>6%</span></div>
+            <div><span>4%</span></div>
           </div>
 
           <div className="story-grid story-grid--4">
@@ -100,7 +95,7 @@ export default function AccountabilityPage() {
 
           <div className="pg-split pg-split--15" style={{ gap: "var(--space-7)" }}>
             <div>
-              <div style={{ display: "flex", height: 32, borderRadius: "var(--radius-md)", overflow: "hidden", marginBottom: "var(--space-5)" }} aria-label="Income channel mix">
+              <div className="income-chart" aria-hidden="true">
                 <div style={{ width: "48%", background: "var(--color-amber)" }} title="48% Card / PayPal" />
                 <div style={{ width: "24%", background: "var(--color-teal)" }} title="24% Bank" />
                 <div style={{ width: "14%", background: "var(--color-amber-soft)" }} title="14% Mobile" />
@@ -108,7 +103,7 @@ export default function AccountabilityPage() {
                 <div style={{ width: "5%", background: "var(--color-slate-300)" }} title="5% Crypto" />
               </div>
 
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: "var(--space-3)" }}>
+              <ul className="income-list" role="list">
                 {[
                   { c: "var(--color-amber)", label: "Card & PayPal — international donors, mostly recurring monthly", pct: "48%", amt: "$93,024" },
                   { c: "var(--color-teal)", label: "Bank transfer — corporate match programmes, large one-time gifts", pct: "24%", amt: "$46,512" },
@@ -307,13 +302,13 @@ export default function AccountabilityPage() {
             </p>
           </div>
 
-          <div style={{ overflowX: "auto" }}>
-            <table style={{ width: "100%", borderCollapse: "collapse" }} aria-label="Annual reporting cadence">
+          <div className="reporting-table">
+            <table aria-label="Annual reporting cadence">
               <thead>
-                <tr style={{ background: "var(--color-slate-100)", textAlign: "left" }}>
-                  <th style={{ padding: "var(--space-3) var(--space-4)", borderBottom: "2px solid var(--color-slate-200)" }}>When</th>
-                  <th style={{ padding: "var(--space-3) var(--space-4)", borderBottom: "2px solid var(--color-slate-200)" }}>What</th>
-                  <th style={{ padding: "var(--space-3) var(--space-4)", borderBottom: "2px solid var(--color-slate-200)" }}>Owner</th>
+                <tr>
+                  <th scope="col">When</th>
+                  <th scope="col">What</th>
+                  <th scope="col">Owner</th>
                 </tr>
               </thead>
               <tbody>
@@ -326,10 +321,10 @@ export default function AccountabilityPage() {
                   { when: "Annually", what: "Safeguarding incident log summary", owner: "Safeguarding lead" },
                   { when: "Ongoing", what: "7-day reply on volunteer/partner/donor enquiries", owner: "All teams" },
                 ].map((r) => (
-                  <tr key={r.what} style={{ borderBottom: "1px solid var(--color-slate-200)" }}>
-                    <td style={{ padding: "var(--space-3) var(--space-4)", fontWeight: 600 }}>{r.when}</td>
-                    <td style={{ padding: "var(--space-3) var(--space-4)" }}>{r.what}</td>
-                    <td style={{ padding: "var(--space-3) var(--space-4)", color: "var(--color-slate-500)" }}>{r.owner}</td>
+                  <tr key={r.what}>
+                    <td>{r.when}</td>
+                    <td>{r.what}</td>
+                    <td>{r.owner}</td>
                   </tr>
                 ))}
               </tbody>
@@ -353,6 +348,6 @@ export default function AccountabilityPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

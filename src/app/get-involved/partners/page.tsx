@@ -1,21 +1,18 @@
-import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { ROUTES } from "@/lib/routes";
-import { PageHero } from "@/components/PageHero";
+import { PageBreadcrumb, PageHero } from "@/components/PageHero";
 import { PartnerForm } from "@/components/PartnerForm";
 
 export const metadata = buildMetadata(ROUTES.partners);
 
 export default function PartnersPage() {
   return (
-    <>
-      <nav aria-label="Breadcrumb" className="container" style={{ padding: "var(--space-5)", fontSize: 14, color: "var(--color-slate-500)" }}>
-        <Link href="/get-involved">Get involved</Link> &middot;{" "}
-        <span aria-current="page" style={{ color: "var(--color-slate-900)" }}>Partners</span>
-      </nav>
+    <div className="interior interior--partners">
+      <PageBreadcrumb links={[{ href: "/get-involved", label: "Get involved" }]} current="Partners" />
 
       <PageHero
         eyebrow="Partners"
+        tone="lime"
         title="Amplify what we already do."
         lede="Schools, corporates, NGOs, and faith communities. Conversation-led, case-by-case partnerships in Sierra Leone and beyond."
       />
@@ -81,6 +78,6 @@ export default function PartnersPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   AMOUNTS,
   ASSURANCES,
@@ -12,15 +13,34 @@ import {
 
 type Channel = "card" | "bank" | "momo" | "crypto";
 
-export function DonatePanel() {
-  const [freq, setFreq] = useState<Frequency>("monthly");
-  const [amount, setAmount] = useState(DEFAULT_AMOUNT);
-  const [channel, setChannel] = useState<Channel>("card");
-  const [custom, setCustom] = useState("");
+type DonatePanelProps = {
+  initialFrequency?: Frequency;
+  initialAmount?: string;
+};
 
-  const onContinue = (e: React.MouseEvent) => {
+export function DonatePanelFromQuery() {
+  const params = useSearchParams();
+  const requestedAmount = params.get("amt");
+  const frequency: Frequency = params.get("freq") === "onetime" ? "onetime" : "monthly";
+  const amount = requestedAmount && /^\d{1,8}(\.\d{1,2})?$/.test(requestedAmount) && Number(requestedAmount) > 0
+    ? String(Number(requestedAmount))
+    : DEFAULT_AMOUNT;
+
+  return <DonatePanel key={`${frequency}:${amount}`} initialFrequency={frequency} initialAmount={amount} />;
+}
+
+export function DonatePanel({ initialFrequency = "monthly", initialAmount = DEFAULT_AMOUNT }: DonatePanelProps) {
+  const initialAmountIsPreset = AMOUNTS.some((amount) => amount === initialAmount);
+  const [freq, setFreq] = useState(initialFrequency);
+  const [amount, setAmount] = useState(initialAmountIsPreset ? initialAmount : DEFAULT_AMOUNT);
+  const [channel, setChannel] = useState<Channel>("card");
+  const [custom, setCustom] = useState(initialAmountIsPreset ? "" : initialAmount);
+
+  const onContinue = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    document.getElementById("how-to-give-now")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const instructions = document.getElementById("how-to-give-now");
+    instructions?.focus({ preventScroll: true });
+    instructions?.scrollIntoView({ block: "start" });
   };
 
   const title = freq === "monthly" ? "Become a monthly partner" : "Send a one-time gift";
@@ -29,11 +49,7 @@ export function DonatePanel() {
   return (
     <form
       className="dp"
-      style={{ position: "sticky", top: 96 }}
-      onSubmit={(e) => {
-        e.preventDefault();
-        onContinue(e as unknown as React.MouseEvent);
-      }}
+      onSubmit={onContinue}
     >
       <div className="dp__head">
         <h2 className="dp__title">{title}</h2>
@@ -41,11 +57,10 @@ export function DonatePanel() {
       </div>
 
       {/* Frequency */}
-      <div className="dp__tabs" role="tablist" aria-label="Donation frequency">
+      <div className="dp__tabs" role="group" aria-label="Donation frequency">
         <button
           type="button"
-          role="tab"
-          aria-selected={freq === "monthly"}
+          aria-pressed={freq === "monthly"}
           className={`dp__tab ${freq === "monthly" ? "is-on" : ""}`}
           onClick={() => setFreq("monthly")}
         >
@@ -53,8 +68,7 @@ export function DonatePanel() {
         </button>
         <button
           type="button"
-          role="tab"
-          aria-selected={freq === "onetime"}
+          aria-pressed={freq === "onetime"}
           className={`dp__tab ${freq === "onetime" ? "is-on" : ""}`}
           onClick={() => setFreq("onetime")}
         >
@@ -63,15 +77,14 @@ export function DonatePanel() {
       </div>
 
       {/* Amounts */}
-      <div className="dp__chips" role="radiogroup" aria-label="Amount in USD">
+      <div className="dp__chips" role="group" aria-label="Amount in USD">
         {AMOUNTS.map((amt) => (
           <div key={amt} className="dp__chipwrap">
             {amt === RECOMMENDED_AMOUNT && <span className="dp__badge">Most start here</span>}
             <button
               type="button"
-              role="radio"
-              aria-checked={amount === amt}
-              className={`dp__chip ${amount === amt ? "is-on" : ""}`}
+              aria-pressed={!custom && amount === amt}
+              className={`dp__chip ${!custom && amount === amt ? "is-on" : ""}`}
               style={{ width: "100%" }}
               onClick={() => { setAmount(amt); setCustom(""); }}
             >
@@ -92,16 +105,15 @@ export function DonatePanel() {
           onChange={(e) => setCustom(e.target.value)}
         />
       </div>
-      <p className="dp__outcome">{OUTCOMES[amount] ?? ""}</p>
+      <p className="dp__outcome" aria-live="polite">{custom ? "" : OUTCOMES[amount]}</p>
 
       {/* Channels */}
-      <div className="dp__tabs" role="tablist" aria-label="Payment channel">
+      <div className="dp__tabs" role="group" aria-label="Payment channel">
         {(["card", "bank", "momo", "crypto"] as Channel[]).map((c) => (
           <button
             key={c}
             type="button"
-            role="tab"
-            aria-selected={channel === c}
+            aria-pressed={channel === c}
             className={`dp__tab ${channel === c ? "is-on" : ""}`}
             onClick={() => setChannel(c)}
           >
@@ -120,7 +132,6 @@ export function DonatePanel() {
       <button
         type="submit"
         className="btn btn--primary btn--lg dp__cta"
-        onClick={onContinue}
       >
         {cta}
       </button>

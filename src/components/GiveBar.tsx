@@ -63,7 +63,7 @@ export function GiveBar() {
         style={{ transform: `scaleX(${progress})` }}
         aria-hidden="true"
       />
-      <div className={`givebar ${visible ? "is-visible" : ""}`}>
+      <div className={`givebar ${visible ? "is-visible" : ""}`} aria-hidden={!visible}>
         <Link
           href="/donate?freq=monthly&amt=30"
           className="btn btn--primary btn--sm givebar__cta"

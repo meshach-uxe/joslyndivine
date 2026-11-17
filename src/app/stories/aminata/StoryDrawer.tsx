@@ -27,6 +27,7 @@ export function StoryDrawer() {
       className={`drawer ${visible ? "is-visible" : ""}`}
       aria-label="Donate drawer"
       aria-hidden={!visible}
+      inert={!visible}
     >
       <div className="container drawer__row">
         <div className="drawer__copy">

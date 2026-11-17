@@ -1,14 +1,15 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { buildMetadata } from "@/lib/metadata";
 import { ROUTES } from "@/lib/routes";
-import { DonatePanel } from "./DonatePanel";
+import { DonatePanel, DonatePanelFromQuery } from "./DonatePanel";
 
 export const metadata = buildMetadata(ROUTES.donate);
 
 export default function DonatePage() {
   return (
-    <>
-      <section className="page-hero">
+    <div className="interior interior--donate">
+      <section className="page-hero page-hero--forest page-hero--split">
         <div className="container pg-split pg-split--11">
           <div>
             <p className="eyebrow page-hero__eyebrow">Give</p>
@@ -39,7 +40,9 @@ export default function DonatePage() {
             <div className="alert" role="status">
               <strong>Heads up:</strong> Card and crypto giving is being finalised. Bank transfers, mobile money, and direct contact are working today &mdash; see <a href="#how-to-give-now">How to give right now</a>.
             </div>
-            <DonatePanel />
+            <Suspense fallback={<DonatePanel />}>
+              <DonatePanelFromQuery />
+            </Suspense>
           </div>
         </div>
       </section>
@@ -102,7 +105,7 @@ export default function DonatePage() {
       </section>
 
       {/* HOW TO GIVE RIGHT NOW — frontend-phase holding pattern */}
-      <section id="how-to-give-now" className="section section--wash" aria-labelledby="how-now-title">
+      <section id="how-to-give-now" className="section section--wash" aria-labelledby="how-now-title" tabIndex={-1}>
         <div className="container">
           <div className="section__head">
             <p className="eyebrow">Working today</p>
@@ -117,7 +120,7 @@ export default function DonatePage() {
             <div className="card">
               <p className="card__eyebrow">Bank transfer</p>
               <h3 className="card__title">Bank transfer</h3>
-              <dl className="micro" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "var(--space-2) var(--space-4)", margin: 0 }}>
+              <dl className="giving-details">
                 <dt><strong>Account name</strong></dt><dd>Joslyn Divine Foundation</dd>
                 <dt><strong>Bank</strong></dt><dd>[Bank name pending]</dd>
                 <dt><strong>Account number</strong></dt><dd>[Account number pending]</dd>
@@ -129,7 +132,7 @@ export default function DonatePage() {
             <div className="card">
               <p className="card__eyebrow">In Sierra Leone</p>
               <h3 className="card__title">Mobile money</h3>
-              <dl className="micro" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "var(--space-2) var(--space-4)", margin: 0 }}>
+              <dl className="giving-details">
                 <dt><strong>Orange Money</strong></dt><dd>[Number pending]</dd>
                 <dt><strong>Africell Money</strong></dt><dd>[Number pending]</dd>
                 <dt><strong>Recipient</strong></dt><dd>Joslyn Divine Foundation</dd>
@@ -163,6 +166,6 @@ export default function DonatePage() {
           </p>
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -55,7 +55,7 @@ export function CountUp({ to, suffix = "", durationMs = 1000, className }: Count
           if (entry.isIntersecting && !started) {
             started = true;
             io.unobserve(el);
-            requestAnimationFrame((now) => run(now));
+          raf = requestAnimationFrame(run);
           }
         }
       },
@@ -70,9 +70,9 @@ export function CountUp({ to, suffix = "", durationMs = 1000, className }: Count
   }, [to, suffix, durationMs]);
 
   return (
-    <span ref={ref} className={className}>
-      {to}
-      {suffix}
-    </span>
+    <>
+      <span className="sr-only">{to}{suffix}</span>
+      <span ref={ref} className={className} aria-hidden="true">{to}{suffix}</span>
+    </>
   );
 }

@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
 import { ROUTES } from "@/lib/routes";
+import { PageBreadcrumb } from "@/components/PageHero";
 import { ThreeRolesStrip } from "@/components/ThreeRolesStrip";
 import { StoryDrawer } from "./StoryDrawer";
 
@@ -8,13 +10,10 @@ export const metadata = buildMetadata(ROUTES.storyAminata);
 
 export default function AminataPage() {
   return (
-    <>
-      <nav aria-label="Breadcrumb" className="container" style={{ padding: "var(--space-5)", fontSize: 14, color: "var(--color-slate-500)" }}>
-        <Link href="/">Home</Link> &middot; <Link href="/stories">Stories</Link> &middot;{" "}
-        <span aria-current="page" style={{ color: "var(--color-slate-900)" }}>Aminata</span>
-      </nav>
+    <div className="interior interior--article">
+      <PageBreadcrumb links={[{ href: "/", label: "Home" }, { href: "/stories", label: "Stories" }]} current="Aminata" />
 
-      <section className="page-hero">
+      <section className="page-hero page-hero--forest page-hero--split">
         <div className="container pg-split pg-split--11 pg-split--center">
           <div>
             <p className="eyebrow page-hero__eyebrow">Education</p>
@@ -28,12 +27,12 @@ export default function AminataPage() {
               <strong>April 2026</strong> · by JDF storytellers
             </p>
           </div>
-          <div className="hero__portrait" aria-hidden="true" style={{ height: 360 }} />
+          <Image src="/images/library-card.webp" alt="" width={1100} height={1100} className="article-cover" unoptimized />
         </div>
       </section>
 
       <article className="section section--white">
-        <div className="container" style={{ maxWidth: 720 }}>
+        <div className="container article-column">
           <div className="prose">
             <p style={{ fontSize: 22, lineHeight: 1.5, fontWeight: 500, marginBottom: "var(--space-7)" }}>
               The first time Aminata read a book on her own, she read it twice. Just to make sure it was really her.
@@ -72,9 +71,9 @@ export default function AminataPage() {
             </p>
 
             <figure>
-              <div className="hero__portrait" role="img" aria-label="Aminata at her desk in Class 6, with a stack of three library books beside her notebook." style={{ height: 320 }} />
+              <Image src="/images/school-desk.webp" alt="Exercise books and a pencil on a sunlit school desk" width={1440} height={960} className="article-figure" unoptimized />
               <figcaption className="micro" style={{ marginTop: "var(--space-3)" }}>
-                Aminata in Class 6, March 2026. Photograph by JDF storytellers, with consent on file.
+                Illustrative image of a school desk.
               </figcaption>
             </figure>
 
@@ -174,6 +173,6 @@ export default function AminataPage() {
       </section>
 
       <StoryDrawer />
-    </>
+    </div>
   );
 }

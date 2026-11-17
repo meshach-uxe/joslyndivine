@@ -2,17 +2,21 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="footer">
+    <footer className="site-footer">
       <div className="container">
-        <div className="footer__cols">
-          <div className="footer__brand">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/logo-white.svg" alt="Joslyn Divine Foundation" width="160" height="32" />
+        <div className="site-footer__columns">
+          <div className="site-footer__brand">
+            <div className="site-wordmark">
+              <span className="site-wordmark__mark" aria-hidden="true" />
+              <span className="site-wordmark__name">
+                Joslyn Divine{" "}
+                <span className="site-wordmark__foundation">Foundation</span>
+              </span>
+            </div>
             <p>A Freetown-based charity supporting children in Kroo Bay and Susan&rsquo;s Bay through education, shelter, and mentorship.</p>
-            <div className="footer__amber-rule" />
           </div>
           <div>
-            <h4>About JDF</h4>
+            <h2>About JDF</h2>
             <ul>
               <li><Link href="/about">About</Link></li>
               <li><Link href="/accountability">Accountability</Link></li>
@@ -21,7 +25,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Get involved</h4>
+            <h2>Get involved</h2>
             <ul>
               <li><Link href="/donate">Donate</Link></li>
               <li><Link href="/get-involved/funders">Become monthly</Link></li>
@@ -30,7 +34,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Stay in touch</h4>
+            <h2>Stay in touch</h2>
             <ul>
               <li><a href="mailto:hello@joslyndivine.com">hello@joslyndivine.com</a></li>
               <li><a href="https://www.instagram.com/joslyndivine" rel="noopener">Instagram</a></li>
@@ -39,11 +43,9 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="footer__legal">
+        <div className="site-footer__legal">
           <span>Sierra Leone NGO Reg. [number pending] · US 501(c)(3) via [fiscal sponsor pending] · &copy; 2026 Joslyn Divine Foundation.</span>
-          <span>
-            <a href="mailto:hello@joslyndivine.com">Contact</a>
-          </span>
+          <a href="mailto:hello@joslyndivine.com">Contact</a>
         </div>
       </div>
     </footer>

@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <>
-      <section className="page-hero" style={{ textAlign: "center" }}>
-        <div className="container" style={{ maxWidth: 680, margin: "0 auto" }}>
+    <div className="interior interior--not-found">
+      <section className="page-hero page-hero--cream">
+        <div className="container">
           <span className="micro" style={{ display: "inline-block", padding: "var(--space-2) var(--space-4)", background: "var(--color-amber-soft)", color: "var(--color-amber-dk)", borderRadius: "var(--radius-full)", letterSpacing: ".16em", textTransform: "uppercase", fontWeight: 700, marginBottom: "var(--space-5)" }}>
             404 · page not found
           </span>
@@ -33,7 +33,7 @@ export default function NotFound() {
             <h2>Try one of these.</h2>
             <p>The four pages people land on most often.</p>
           </div>
-          <div className="story-grid" style={{ gridTemplateColumns: "repeat(2, 1fr)", maxWidth: 880, margin: "0 auto" }}>
+          <div className="story-grid story-grid--2 recovery-links">
             <Link href="/donate" className="card" style={{ textDecoration: "none", color: "inherit" }}>
               <h3 className="card__title">Donate</h3>
               <p className="micro">/donate &rarr;</p>
@@ -65,6 +65,6 @@ export default function NotFound() {
           </p>
         </div>
       </section>
-    </>
+    </div>
   );
 }

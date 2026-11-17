@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
 import { ROUTES } from "@/lib/routes";
 import { PageHero } from "@/components/PageHero";
@@ -26,13 +27,14 @@ const TIMELINE = [
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="interior interior--about">
       <PageHero
         eyebrow="About"
+        tone="cream"
         title="A small organisation, in a specific community, doing one thing well."
         lede="The Joslyn Divine Foundation supports children in Kroo Bay and Susan&rsquo;s Bay, two of Freetown&rsquo;s most under-served urban communities, through education, shelter, and mentorship. Vision set in 2019. Programs began in 2022."
       >
-        <div className="micro" style={{ marginTop: "var(--space-5)", display: "flex", gap: "var(--space-5)", flexWrap: "wrap" }}>
+        <div className="page-hero__facts">
           <span><strong>2019</strong> Vision set</span>
           <span><strong>2022</strong> Programs launched</span>
           <span><strong>2 communities</strong> Kroo Bay, Susan&rsquo;s Bay</span>
@@ -81,7 +83,7 @@ export default function AboutPage() {
             <p>If we ever break one of these, hold us accountable. They are not aspirational &mdash; they are operational. Every programme decision passes through them.</p>
           </div>
 
-          <div className="story-grid story-grid--2">
+          <div className="story-grid story-grid--2 principle-grid">
             {PRINCIPLES.map((p) => (
               <article key={p.num} className="card">
                 <p className="card__eyebrow" style={{ color: "var(--color-amber-dk)" }}>{p.num}</p>
@@ -98,11 +100,11 @@ export default function AboutPage() {
           <div className="section__head">
             <p className="eyebrow">The team</p>
             <h2>A small leadership group, named.</h2>
-            <p>Every name here is real, every role is real, and every photograph is shared with consent. Photographs are placeholders in this prototype.</p>
+            <p>Team illustrations are placeholders for portraits. We publish photographs only with consent.</p>
           </div>
 
           <div className="card founder-card" style={{ marginBottom: "var(--space-6)" }}>
-            <div className="hero__portrait" style={{ height: 160, width: 160, borderRadius: "var(--radius-lg)" }} aria-hidden="true" />
+            <Image src="/images/team-illustration.webp" alt="" width={160} height={160} className="team-illustration" unoptimized />
             <div>
               <p className="card__eyebrow">Founder</p>
               <h3 className="card__title">Mrs. Ellaline V. Wright-Hook</h3>
@@ -123,9 +125,9 @@ export default function AboutPage() {
               { role: "Diaspora lead", body: "Coordinates donors, partners, and volunteers across the UK and US. Reports back to Freetown weekly." },
             ].map((m) => (
               <article key={m.role} className="card">
-                <div className="hero__portrait" style={{ height: 96, width: 96, borderRadius: "var(--radius-full)", marginBottom: "var(--space-3)" }} aria-hidden="true" />
+                <Image src="/images/team-illustration.webp" alt="" width={96} height={96} className="team-illustration team-illustration--avatar" unoptimized />
                 <p className="card__eyebrow">{m.role}</p>
-                <h4 className="h4">[Name pending]</h4>
+                <h3 className="h4">[Name pending]</h3>
                 <p className="micro">{m.body}</p>
               </article>
             ))}
@@ -138,21 +140,21 @@ export default function AboutPage() {
       </section>
 
       <section className="section section--wash">
-        <div className="container">
+        <div className="container chapter-columns">
           <div className="section__head">
             <p className="eyebrow">How we got here</p>
             <h2>2019 to today.</h2>
             <p>A short list. Every entry is real, sourced, and small on purpose.</p>
           </div>
 
-          <ol style={{ listStyle: "none", padding: 0, position: "relative", paddingLeft: "var(--space-7)" }}>
-            <span aria-hidden="true" style={{ position: "absolute", left: 11, top: 8, bottom: 8, width: 2, background: "var(--color-slate-200)" }} />
+          <ol className="about-timeline" role="list">
             {TIMELINE.map((t) => (
-              <li key={t.year} style={{ position: "relative", paddingBottom: "var(--space-7)" }}>
-                <span aria-hidden="true" style={{ position: "absolute", left: -29, top: 6, width: 24, height: 24, borderRadius: 9999, background: "var(--color-amber)", border: "4px solid var(--color-white)", boxShadow: "0 0 0 1px var(--color-amber)" }} />
-                <p className="eyebrow" style={{ marginBottom: "var(--space-2)" }}>{t.year}</p>
-                <h3 className="h3" style={{ marginTop: 0 }}>{t.title}</h3>
-                <p style={{ color: "var(--color-slate-700)" }}>{t.body}</p>
+              <li key={t.year}>
+                <p className="about-timeline__year">{t.year}</p>
+                <div>
+                  <h3>{t.title}</h3>
+                  <p>{t.body}</p>
+                </div>
               </li>
             ))}
           </ol>
@@ -168,6 +170,6 @@ export default function AboutPage() {
           <ThreeRolesStrip />
         </div>
       </section>
-    </>
+    </div>
   );
 }

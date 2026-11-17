@@ -1,17 +1,14 @@
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { ROUTES } from "@/lib/routes";
-import { PageHero } from "@/components/PageHero";
+import { PageBreadcrumb, PageHero } from "@/components/PageHero";
 
 export const metadata = buildMetadata(ROUTES.funders);
 
 export default function FundersPage() {
   return (
-    <>
-      <nav aria-label="Breadcrumb" className="container" style={{ padding: "var(--space-5)", fontSize: 14, color: "var(--color-slate-500)" }}>
-        <Link href="/get-involved">Get involved</Link> &middot;{" "}
-        <span aria-current="page" style={{ color: "var(--color-slate-900)" }}>Funders</span>
-      </nav>
+    <div className="interior interior--funders">
+      <PageBreadcrumb links={[{ href: "/get-involved", label: "Get involved" }]} current="Funders" />
 
       <PageHero
         eyebrow="Funders"
@@ -155,6 +152,6 @@ export default function FundersPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

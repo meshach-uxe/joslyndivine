@@ -1,4 +1,12 @@
 :root {
+  --jdf-forest: #0b3d35;
+  --jdf-cream: #f7f6ed;
+  --jdf-sage: #e3efdf;
+  --jdf-lime: #e0ee9e;
+  --jdf-muted: #425e54;
+  --jdf-border: #cbd8ce;
+  --site-container-width: 80rem;
+
   /* color */
   --color-slate-900: #0F172A;
   --color-slate-700: #334155;
@@ -45,9 +53,8 @@
   --font-micro:   "Helvetica Now Micro", "Helvetica Neue", Arial, sans-serif;
   --font-mono:    "JetBrains Mono", "Menlo", "Consolas", monospace;
   --font-logo:    "Avigea", serif;
-  /* Editorial display serif — scoped to large moments only (Wednesday band,
-     hero ledger, pull-quotes). Never body, nav, or buttons. */
-  --font-serif:   "Avigea", Georgia, "Times New Roman", serif;
+  /* Editorial quotes and the story giving-card heading. */
+  --font-serif:   "Spectral", Georgia, "Times New Roman", serif;
 }
 
 @media (prefers-reduced-motion: reduce) {

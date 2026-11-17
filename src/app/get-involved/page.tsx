@@ -43,9 +43,10 @@ const FAQS: FAQItem[] = [
 
 export default function GetInvolvedPage() {
   return (
-    <>
+    <div className="interior interior--involved">
       <PageHero
         eyebrow="Get involved"
+        tone="lime"
         title="Three ways to be part of this."
         lede="Funders invest. Volunteers build. Partners amplify. Pick the role that fits the time, skill, or resources you have right now — every one of them moves a child closer to the next year of school."
       />
@@ -61,7 +62,7 @@ export default function GetInvolvedPage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gap: "var(--space-5)" }}>
+          <div className="involved-paths">
             <article className="card card--highlight">
               <p className="card__eyebrow">Funders</p>
               <h3 className="card__title">Invest in a generation, not a transaction.</h3>
@@ -112,13 +113,13 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      <section className="section section--wash">
+      <section className="section section--lime">
         <div className="container">
           <div className="section__head">
             <p className="eyebrow">What it adds up to</p>
             <h2>A small organisation. A specific community. Real numbers.</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "var(--space-7)" }}>
+          <div className="chapter-stats">
             <div className="stat">
               <div className="stat__num">23</div>
               <div className="stat__label">children promoted to the next grade in 2024</div>
@@ -163,6 +164,6 @@ export default function GetInvolvedPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
