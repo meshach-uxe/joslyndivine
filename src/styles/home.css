@@ -123,6 +123,7 @@
 }
 
 .home-hero__link:hover { background: var(--jdf-orange); }
+.home-hero__link:hover strong + span { color: var(--jdf-forest); }
 
 .home-hero__link strong {
   display: block;
