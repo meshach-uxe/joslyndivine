@@ -122,7 +122,7 @@
   transition: background-color var(--motion-base);
 }
 
-.home-hero__link:hover { background: var(--jdf-lime); }
+.home-hero__link:hover { background: var(--jdf-orange); }
 
 .home-hero__link strong {
   display: block;
@@ -183,7 +183,7 @@
   position: absolute;
   z-index: -1;
   inset: -.75rem -.75rem .75rem .75rem;
-  background: var(--jdf-lime);
+  background: var(--jdf-orange);
   border-radius: inherit;
 }
 
@@ -224,7 +224,7 @@
 }
 
 .wednesday__copy .eyebrow {
-  color: var(--jdf-lime);
+  color: var(--jdf-orange);
   margin: 0 0 1.25rem;
 }
 
@@ -237,7 +237,7 @@
   text-wrap: pretty;
 }
 
-.home .wednesday__quote .hl { color: var(--jdf-lime); }
+.home .wednesday__quote .hl { color: var(--jdf-orange); }
 
 .home .wednesday__cite {
   display: flex;
@@ -344,7 +344,8 @@
   line-height: 1;
 }
 
-.home-impact { background: var(--jdf-lime); }
+.home-impact { background: var(--jdf-orange); }
+.home-impact .section__head > p:not(.eyebrow) { color: var(--jdf-forest); }
 
 .home-impact__grid, .home-give__grid {
   display: grid;

@@ -12,7 +12,7 @@ export default function StoriesPage() {
         eyebrow="Stories"
         tone="cream"
         title="From the children of Kroo Bay and Susan&rsquo;s Bay."
-        lede="Real names, with consent on file. The images here are illustrative. We never use a child's image to sell despair, and we never publish a story without the guardian and the child agreeing — section by section."
+        lede="Real names, with consent on file. The photographs here are illustrative stock images. We never use a child's image to sell despair, and we never publish a story without the guardian and the child agreeing — section by section."
       />
       <section className="section section--white">
         <div className="container">

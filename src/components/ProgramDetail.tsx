@@ -65,7 +65,7 @@ export function ProgramDetail({
         </div>
       </section>
 
-      <section className="section section--lime">
+      <section className="section section--accent">
         <div className="container">
           <div className="section__head">
             <p className="eyebrow">Outcomes</p>

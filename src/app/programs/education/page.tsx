@@ -3,6 +3,7 @@ import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
 import { ROUTES } from "@/lib/routes";
 import { ProgramDetail } from "@/components/ProgramDetail";
+import { PHOTOS } from "@/lib/photography";
 
 export const metadata = buildMetadata(ROUTES.education);
 
@@ -67,11 +68,11 @@ export default function EducationPage() {
               <div className="section__head">
                 <p className="eyebrow">From this program</p>
                 <h2>Meet Aminata.</h2>
-                <p>Real name, with consent. Two grades ahead by the end of her second year in the program. The library image is illustrative.</p>
+                <p>Real name, with consent. Two grades ahead by the end of her second year in the program. The library photograph is illustrative stock imagery.</p>
               </div>
               <article className="story">
                 <div className="story__image">
-                  <Image src="/images/library-table.webp" alt="Illustration of books on a sunlit library table" fill unoptimized />
+                  <Image src={PHOTOS.library.src} alt={PHOTOS.library.alt} fill unoptimized />
                 </div>
                 <div className="story__copy">
                   <h3 className="story__name">Aminata</h3>

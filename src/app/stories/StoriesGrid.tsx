@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { PHOTOS } from "@/lib/photography";
 
 type Category = "all" | "education" | "shelter" | "mentorship";
 
@@ -14,9 +15,9 @@ type Story = {
 };
 
 const CATEGORY_IMAGES: Record<Story["cat"], string> = {
-  education: "/images/library-table.webp",
-  shelter: "/images/kinship-home.webp",
-  mentorship: "/images/mentoring-chairs.webp",
+  education: PHOTOS.study.src,
+  shelter: PHOTOS.shelter.src,
+  mentorship: PHOTOS.mentorship.src,
 };
 
 const STORIES: Story[] = [
@@ -68,7 +69,7 @@ export function StoriesGrid() {
           const cardContent = (
             <>
               <div className="story-card__img">
-                <Image src={isPending ? CATEGORY_IMAGES[s.cat] : "/images/library-card.webp"} alt="" fill unoptimized />
+                <Image src={isPending ? CATEGORY_IMAGES[s.cat] : PHOTOS.library.src} alt="" fill unoptimized />
               </div>
               <div className="story-card__body">
                 <p className="card__eyebrow">{s.cat.charAt(0).toUpperCase() + s.cat.slice(1)}</p>

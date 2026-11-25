@@ -6,7 +6,7 @@ type PageHeroProps = {
   title: string;
   lede?: ReactNode;
   children?: ReactNode;
-  tone?: "forest" | "lime" | "cream";
+  tone?: "forest" | "orange" | "cream";
 };
 
 export function PageHero({ eyebrow, title, lede, children, tone = "forest" }: PageHeroProps) {

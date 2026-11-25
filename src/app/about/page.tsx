@@ -4,6 +4,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { ROUTES } from "@/lib/routes";
 import { PageHero } from "@/components/PageHero";
 import { ThreeRolesStrip } from "@/components/ThreeRolesStrip";
+import { PHOTOS } from "@/lib/photography";
 
 export const metadata = buildMetadata(ROUTES.about);
 
@@ -100,11 +101,15 @@ export default function AboutPage() {
           <div className="section__head">
             <p className="eyebrow">The team</p>
             <h2>A small leadership group, named.</h2>
-            <p>Team illustrations are placeholders for portraits. We publish photographs only with consent.</p>
+            <p>We publish team portraits only with consent.</p>
           </div>
 
+          <figure className="team-photo">
+            <Image src={PHOTOS.team.src} alt={PHOTOS.team.alt} width={1200} height={1799} unoptimized />
+            <figcaption className="micro">Illustrative stock photograph of teamwork · fauxels / Pexels.</figcaption>
+          </figure>
+
           <div className="card founder-card" style={{ marginBottom: "var(--space-6)" }}>
-            <Image src="/images/team-illustration.webp" alt="" width={160} height={160} className="team-illustration" unoptimized />
             <div>
               <p className="card__eyebrow">Founder</p>
               <h3 className="card__title">Mrs. Ellaline V. Wright-Hook</h3>
@@ -125,7 +130,6 @@ export default function AboutPage() {
               { role: "Diaspora lead", body: "Coordinates donors, partners, and volunteers across the UK and US. Reports back to Freetown weekly." },
             ].map((m) => (
               <article key={m.role} className="card">
-                <Image src="/images/team-illustration.webp" alt="" width={96} height={96} className="team-illustration team-illustration--avatar" unoptimized />
                 <p className="card__eyebrow">{m.role}</p>
                 <h3 className="h4">[Name pending]</h3>
                 <p className="micro">{m.body}</p>

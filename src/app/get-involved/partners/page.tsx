@@ -12,7 +12,7 @@ export default function PartnersPage() {
 
       <PageHero
         eyebrow="Partners"
-        tone="lime"
+        tone="orange"
         title="Amplify what we already do."
         lede="Schools, corporates, NGOs, and faith communities. Conversation-led, case-by-case partnerships in Sierra Leone and beyond."
       />

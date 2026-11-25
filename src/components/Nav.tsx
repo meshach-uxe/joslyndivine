@@ -106,8 +106,8 @@ export function Nav() {
             onNavigate={closeMenu}
           >
             <span className="site-wordmark__mark" aria-hidden="true" />
-            <span className="site-wordmark__name">
-              Joslyn Divine{" "}
+            <span className="site-wordmark__text">
+              <span className="site-wordmark__name">Joslyn Divine</span>
               <span className="site-wordmark__foundation">Foundation</span>
             </span>
           </Link>

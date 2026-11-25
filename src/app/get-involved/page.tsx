@@ -46,7 +46,7 @@ export default function GetInvolvedPage() {
     <div className="interior interior--involved">
       <PageHero
         eyebrow="Get involved"
-        tone="lime"
+        tone="orange"
         title="Three ways to be part of this."
         lede="Funders invest. Volunteers build. Partners amplify. Pick the role that fits the time, skill, or resources you have right now — every one of them moves a child closer to the next year of school."
       />
@@ -113,7 +113,7 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      <section className="section section--lime">
+      <section className="section section--accent">
         <div className="container">
           <div className="section__head">
             <p className="eyebrow">What it adds up to</p>

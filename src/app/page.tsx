@@ -7,6 +7,7 @@ import { DonatePanelPreview } from "@/components/DonatePanelPreview";
 import { CountUp } from "@/components/CountUp";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE } from "@/lib/metadata";
+import { PHOTOS } from "@/lib/photography";
 
 export const metadata = buildMetadata(ROUTES.home);
 
@@ -28,7 +29,7 @@ export default function HomePage() {
               shelter, mentorship, and the slow work of keeping a child safe long enough to become themselves.
             </p>
             <div className="home-hero__actions">
-              <Link href="/donate" className="btn btn--secondary">
+              <Link href="/donate" className="btn btn--primary">
                 Become a monthly partner <span className="cta-arrow" aria-hidden="true">&rarr;</span>
               </Link>
               <Link href="/about" className="btn btn--tertiary">Read our story</Link>
@@ -40,13 +41,13 @@ export default function HomePage() {
           <div className="home-hero__visual">
             <figure className="home-hero__figure">
               <Image
-                src="/images/school-desk.webp"
-                alt="Exercise books and a pencil on a sunlit wooden desk"
+                src={PHOTOS.study.src}
+                alt={PHOTOS.study.alt}
                 fill
                 priority
                 unoptimized
               />
-              <figcaption>Illustrative image</figcaption>
+              <figcaption>Stock photograph · Ronaldo Guiraldelli / Pexels</figcaption>
             </figure>
             <div className="home-hero__links">
               <Link href="/programs" className="home-hero__link">
@@ -68,8 +69,8 @@ export default function HomePage() {
           <article className="story">
             <div className="story__media">
               <Image
-                src="/images/library-card.webp"
-                alt="Abstract folded-paper illustration of a book and library card in amber and teal"
+                src={PHOTOS.library.src}
+                alt={PHOTOS.library.alt}
                 fill
                 unoptimized
               />
@@ -98,7 +99,7 @@ export default function HomePage() {
               permission &mdash; and never to sell despair.
             </p>
             <p>
-              The panel above is an abstraction, not a stock photo. A child&rsquo;s real photograph appears on this site
+              The library photograph is illustrative stock imagery. A child&rsquo;s photograph appears on this site
               only with signed guardian consent &mdash; see our{" "}
               <Link href="/accountability#safeguarding">safeguarding &amp; consent policy</Link>.
             </p>

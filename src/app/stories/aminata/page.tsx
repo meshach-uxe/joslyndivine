@@ -5,6 +5,7 @@ import { ROUTES } from "@/lib/routes";
 import { PageBreadcrumb } from "@/components/PageHero";
 import { ThreeRolesStrip } from "@/components/ThreeRolesStrip";
 import { StoryDrawer } from "./StoryDrawer";
+import { PHOTOS } from "@/lib/photography";
 
 export const metadata = buildMetadata(ROUTES.storyAminata);
 
@@ -27,7 +28,10 @@ export default function AminataPage() {
               <strong>April 2026</strong> · by JDF storytellers
             </p>
           </div>
-          <Image src="/images/library-card.webp" alt="" width={1100} height={1100} className="article-cover" unoptimized />
+          <figure className="article-cover-figure">
+            <Image src={PHOTOS.library.src} alt={PHOTOS.library.alt} width={1400} height={2100} className="article-cover" unoptimized />
+            <figcaption className="micro">Illustrative stock photograph · Dmitry Spravko / Unsplash</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -71,9 +75,9 @@ export default function AminataPage() {
             </p>
 
             <figure>
-              <Image src="/images/school-desk.webp" alt="Exercise books and a pencil on a sunlit school desk" width={1440} height={960} className="article-figure" unoptimized />
+              <Image src={PHOTOS.study.src} alt={PHOTOS.study.alt} width={1600} height={1067} className="article-figure" unoptimized />
               <figcaption className="micro" style={{ marginTop: "var(--space-3)" }}>
-                Illustrative image of a school desk.
+                Illustrative stock photograph · Ronaldo Guiraldelli / Pexels.
               </figcaption>
             </figure>
 
@@ -156,7 +160,7 @@ export default function AminataPage() {
 
           <p className="micro" style={{ borderTop: "1px solid var(--color-slate-200)", paddingTop: "var(--space-5)", marginTop: "var(--space-7)" }}>
             Story published with full consent of Aminata&rsquo;s guardian, Ya Hawa, and Aminata herself, signed under the
-            JDF Guardian Consent Form on 14 February 2026. Photographs taken with the same consent. Aminata&rsquo;s real
+            JDF Guardian Consent Form on 14 February 2026. The photographs on this page are licensed stock imagery. Aminata&rsquo;s real
             first name is used; her surname is not, by guardian request.
           </p>
         </div>

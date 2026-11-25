@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PHOTOS } from "@/lib/photography";
 
 export function Footer() {
   return (
@@ -8,8 +9,8 @@ export function Footer() {
           <div className="site-footer__brand">
             <div className="site-wordmark">
               <span className="site-wordmark__mark" aria-hidden="true" />
-              <span className="site-wordmark__name">
-                Joslyn Divine{" "}
+              <span className="site-wordmark__text">
+                <span className="site-wordmark__name">Joslyn Divine</span>
                 <span className="site-wordmark__foundation">Foundation</span>
               </span>
             </div>
@@ -43,6 +44,16 @@ export function Footer() {
             </ul>
           </div>
         </div>
+        <details className="site-footer__credits">
+          <summary>Photography credits</summary>
+          <p>Stock photographs illustrate our work. They do not depict JDF participants, staff, or locations.</p>
+          <ul>
+            {Object.values(PHOTOS).map((photo) => (
+              <li key={photo.src}><a href={photo.source} rel="noopener">{photo.subject} — {photo.photographer}</a></li>
+            ))}
+          </ul>
+          <p>Used under the <a href="https://www.pexels.com/license/" rel="noopener">Pexels License</a> and <a href="https://unsplash.com/license" rel="noopener">Unsplash License</a>.</p>
+        </details>
         <div className="site-footer__legal">
           <span>Sierra Leone NGO Reg. [number pending] · US 501(c)(3) via [fiscal sponsor pending] · &copy; 2026 Joslyn Divine Foundation.</span>
           <a href="mailto:hello@joslyndivine.com">Contact</a>
